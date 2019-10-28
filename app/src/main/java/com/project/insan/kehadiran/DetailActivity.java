@@ -27,9 +27,8 @@ public class DetailActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        Intent intent = this.getIntent();
-        Bundle bundle = intent.getExtras();
-        Movie.ResultsBean movie= (Movie.ResultsBean) getIntent().getExtras().getSerializable("value");
+        Intent intent = getIntent();
+        Movie.ResultsBean movie= intent.getParcelableExtra("value");
 
         Log.i("asdf",movie.getTitle());
         Title = findViewById(R.id.tv_title);

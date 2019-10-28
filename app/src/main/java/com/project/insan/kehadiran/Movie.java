@@ -1,5 +1,8 @@
 package com.project.insan.kehadiran;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -86,7 +89,7 @@ public class Movie implements Serializable {
         }
     }
 
-    public static class ResultsBean implements Serializable {
+    public static class ResultsBean implements Parcelable {
         /**
          * vote_count : 1663
          * id : 299537
@@ -118,6 +121,34 @@ public class Movie implements Serializable {
         private String overview;
         private String release_date;
         private List<Integer> genre_ids;
+
+        protected ResultsBean(Parcel in) {
+            vote_count = in.readInt();
+            id = in.readInt();
+            video = in.readByte() != 0;
+            vote_average = in.readDouble();
+            title = in.readString();
+            popularity = in.readDouble();
+            poster_path = in.readString();
+            original_language = in.readString();
+            original_title = in.readString();
+            backdrop_path = in.readString();
+            adult = in.readByte() != 0;
+            overview = in.readString();
+            release_date = in.readString();
+        }
+
+        public static final Creator<ResultsBean> CREATOR = new Creator<ResultsBean>() {
+            @Override
+            public ResultsBean createFromParcel(Parcel in) {
+                return new ResultsBean(in);
+            }
+
+            @Override
+            public ResultsBean[] newArray(int size) {
+                return new ResultsBean[size];
+            }
+        };
 
         public int getVote_count() {
             return vote_count;
@@ -229,6 +260,28 @@ public class Movie implements Serializable {
 
         public void setGenre_ids(List<Integer> genre_ids) {
             this.genre_ids = genre_ids;
+        }
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        @Override
+        public void writeToParcel(Parcel dest, int flags) {
+            dest.writeInt(vote_count);
+            dest.writeInt(id);
+            dest.writeByte((byte) (video ? 1 : 0));
+            dest.writeDouble(vote_average);
+            dest.writeString(title);
+            dest.writeDouble(popularity);
+            dest.writeString(poster_path);
+            dest.writeString(original_language);
+            dest.writeString(original_title);
+            dest.writeString(backdrop_path);
+            dest.writeByte((byte) (adult ? 1 : 0));
+            dest.writeString(overview);
+            dest.writeString(release_date);
         }
     }
 }

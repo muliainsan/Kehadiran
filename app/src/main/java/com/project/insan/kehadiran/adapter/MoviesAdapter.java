@@ -61,9 +61,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             public void onClick(View v) {
                 Movie.ResultsBean list2 = list.get(i);
                 Intent intent = new Intent(context, DetailActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("value", list2);
-                intent.putExtras(bundle);
+                intent.putExtra("value", list2);
                 context.startActivity(intent);
             }
         });
