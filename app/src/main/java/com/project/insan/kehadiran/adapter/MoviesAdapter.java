@@ -26,7 +26,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
     public MoviesAdapter(List<Movie.ResultsBean> list, Context context) {
         this.list = list;
-//        this.rowLayout = rowLayout;
         this.context = context;
     }
 
