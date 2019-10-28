@@ -1,9 +1,12 @@
 package com.project.insan.kehadiran.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.MovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.project.insan.kehadiran.DetailActivity;
 import com.project.insan.kehadiran.Movie;
 import com.project.insan.kehadiran.R;
 import com.squareup.picasso.Picasso;
@@ -31,13 +35,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 
     @NonNull
     @Override
-    public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+    public MovieViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup,final int i) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_movies,viewGroup,false);
         return new MovieViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MovieViewHolder holder, int i) {
+    public void onBindViewHolder(@NonNull MovieViewHolder holder, final int i) {
 //        Log.e("ciacia",list.get(2).getTitle());
         holder.title.setText(list.get(i).getTitle());
 
@@ -52,7 +56,17 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 ////                    .resize(300, 500)  // Post processing - Resizing the image
                 .into(holder.image); // View where image is loaded.
 
-
+        holder.ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Movie.ResultsBean list2 = list.get(i);
+                Intent intent = new Intent(context, DetailActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("value", list2);
+                intent.putExtras(bundle);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -61,16 +75,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
     }
 
 
-
-
-
     public class MovieViewHolder extends RecyclerView.ViewHolder {
         private LinearLayout moviesLayout;
         private  TextView title;
         private  TextView desc;
         private TextView rate;
         private ImageView image;
-
+        private LinearLayout ll;
         public MovieViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -79,6 +90,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
             desc = itemView.findViewById(R.id.tv_desc);
             rate = itemView.findViewById(R.id.tv_rate);
             image = itemView.findViewById(R.id.iv_poster);
+            ll = itemView.findViewById(R.id.movies_layout);
 
         }
     }

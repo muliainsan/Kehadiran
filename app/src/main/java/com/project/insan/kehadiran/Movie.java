@@ -1,8 +1,9 @@
 package com.project.insan.kehadiran;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Movie {
+public class Movie implements Serializable {
 
 
     /**
@@ -85,7 +86,7 @@ public class Movie {
         }
     }
 
-    public static class ResultsBean {
+    public static class ResultsBean implements Serializable {
         /**
          * vote_count : 1663
          * id : 299537

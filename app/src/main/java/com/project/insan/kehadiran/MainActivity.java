@@ -32,8 +32,7 @@ import retrofit2.Response;
 
 import static android.app.PendingIntent.getActivity;
 
-public class MainActivity extends AppCompatActivity implements SwipeRefreshLayout.OnRefreshListener {
-
+public class MainActivity extends AppCompatActivity{
     private static String API_Key = "b22f426e41174091c4c6bfa16086e1db";
     private ActionBar toolbar;
     private SwipeRefreshLayout swipeLayout;
@@ -43,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         setContentView(R.layout.activity_main);
 
         Log.e("1q1q", "asdf");
-
+        swipeLayout = findViewById(R.id.swipe_container);
         final Spinner spinner = (Spinner) findViewById(R.id.spinner);
         List<String> categories = new ArrayList<String>();
         categories.add("Now Playing");
@@ -131,25 +130,20 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             }
         });
 
-    }
-
-
-    @Override
-    public void onRefresh() {
-        new Handler().postDelayed(new Runnable() {
+        swipeLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void run() {
-                if (toolbar.getTitle()=="Home") {
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
 
-                }
-                swipeLayout.setRefreshing(false);
+//                    setupViewPager(viewPager);
+                        swipeLayout.setRefreshing(false);
+                    }
+                }, 1000);
             }
-        },1000);
-
+        });
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        swipeLayout.setRefreshing(false);
-    }
+
 }
