@@ -1,11 +1,13 @@
 <resources>
-    <string name="app_name">Movies</string>
-    <string name="title_shop">Shop</string>
-    <string name="title_gifts">Gifts</string>
-    <string name="title_cart">Cart</string>
-    <string name="title_profile">Profile</string>
+    <string name="title">Title : </string>
+    <string name="rating">Rating : </string>
+    <string name="release_date">Release Date : </string>
+    <string name="detail">Detail : </string>
+    <string name="asdf">Profile</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="title_activity_detail">DetailActivity</string>
+    <string name="app_name">Movies</string>
+    <string name="title_activity_detail">Activity detail</string>
+
+
 </resources>
