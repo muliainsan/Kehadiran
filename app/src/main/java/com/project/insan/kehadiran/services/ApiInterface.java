@@ -1,10 +1,10 @@
 package com.project.insan.kehadiran.services;
 
-import com.project.insan.kehadiran.Movie;
+import com.project.insan.kehadiran.java.Movie;
+import com.project.insan.kehadiran.java.Tv;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface ApiInterface {
@@ -22,10 +22,14 @@ public interface ApiInterface {
     Call<Movie> getTopRated(
             @Query("api_key") String apiKey
     );
-//    @GET("movie/{id}")
-//    Call<MovieDetails> getMovieDetails(
-//            @Path("id") int id,
-//            @Query("api_key") String apiKey
-//    );
 
+
+    @GET("tv/popular")
+    Call<Tv> getTVPopular(
+            @Query("api_key") String apiKey
+    );
+    @GET("tv/airing_today")
+    Call<Tv> getTVairingToday(
+            @Query("api_key") String apiKey
+    );
 }

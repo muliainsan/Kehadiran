@@ -1,37 +1,15 @@
 package com.project.insan.kehadiran;
 
-import android.content.Context;
-import android.os.Handler;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
 
-import com.project.insan.kehadiran.adapter.MoviesAdapter;
 import com.project.insan.kehadiran.adapter.TabAdapter;
-import com.project.insan.kehadiran.services.ApiClient;
-import com.project.insan.kehadiran.services.ApiInterface;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import com.project.insan.kehadiran.fragment.MovieFragment;
+import com.project.insan.kehadiran.fragment.TvFragment;
 
 import static android.app.PendingIntent.getActivity;
 

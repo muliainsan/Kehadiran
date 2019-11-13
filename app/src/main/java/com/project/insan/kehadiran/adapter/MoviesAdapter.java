@@ -2,12 +2,8 @@ package com.project.insan.kehadiran.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
-import android.text.method.MovementMethod;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.project.insan.kehadiran.DetailActivity;
-import com.project.insan.kehadiran.Movie;
+import com.project.insan.kehadiran.java.Movie;
 import com.project.insan.kehadiran.R;
 import com.squareup.picasso.Picasso;
 

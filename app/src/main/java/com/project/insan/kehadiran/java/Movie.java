@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran;
+package com.project.insan.kehadiran.java;
 
 import android.os.Parcel;
 import android.os.Parcelable;
