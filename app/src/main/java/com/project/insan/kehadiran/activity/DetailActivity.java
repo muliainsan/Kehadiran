@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran;
+package com.project.insan.kehadiran.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,11 +8,12 @@ import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.project.insan.kehadiran.R;
 import com.project.insan.kehadiran.java.Movie;
 import com.squareup.picasso.Picasso;
 
 public class DetailActivity extends AppCompatActivity {
-    TextView Title, Rate, Release, Detail;
+    public TextView Title, Rate, Release, Detail;
     ImageView image;
 
 

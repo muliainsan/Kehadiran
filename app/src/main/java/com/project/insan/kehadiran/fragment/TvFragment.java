@@ -56,8 +56,8 @@ public class TvFragment extends Fragment {
         final RecyclerView rv = view.findViewById(R.id.rv_movie);
         final Spinner spinner =  view.findViewById(R.id.spinner);
         List<String> categories = new ArrayList<String>();
-        categories.add("Airing Today");
-        categories.add("Popular");
+        categories.add(getResources().getString(R.string.airing_today));
+        categories.add(getResources().getString(R.string.popular));
 
         final ArrayAdapter<String> dataAdapter ;
         dataAdapter = new ArrayAdapter<String>(  getActivity(),android.R.layout.simple_spinner_item, categories);
@@ -66,7 +66,7 @@ public class TvFragment extends Fragment {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, final View view, int position, long id) {
-                if(dataAdapter.getItem(position)=="Airing Today") {
+                if(position==0) {
                     final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                     Call<Tv> call = apiService.getTVairingToday(API_Key);
                     call.enqueue(new Callback<Tv>() {
@@ -88,7 +88,7 @@ public class TvFragment extends Fragment {
                         }
                     });
 
-                }else if(dataAdapter.getItem(position)=="Popular"){
+                }else if(position==1){
                     final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                     Call<Tv> call = apiService.getTVPopular(API_Key);
                     call.enqueue(new Callback<Tv>() {

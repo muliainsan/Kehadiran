@@ -54,9 +54,10 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
         final RecyclerView rv = view.findViewById(R.id.rv_movie);
         final Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
         List<String> categories = new ArrayList<String>();
-        categories.add("Now Playing");
-        categories.add("Up Coming");
-        categories.add("Top Rated");
+
+        categories.add(getResources().getString(R.string.now_playing));
+        categories.add(getResources().getString(R.string.up_coming));
+        categories.add(getResources().getString(R.string.top_rated));
 
         final ArrayAdapter<String> dataAdapter;
         dataAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_spinner_item, categories);
@@ -65,7 +66,7 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, final View view, int position, long id) {
-                if (dataAdapter.getItem(position) == "Now Playing") {
+                if (position==0) {
                     final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                     Call<Movie> call = apiService.getNowPlaying(API_Key);
                     call.enqueue(new Callback<Movie>() {
@@ -86,7 +87,7 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
                             Log.e("xxx", t.toString());
                         }
                     });
-                } else if (dataAdapter.getItem(position) == "Up Coming") {
+                } else if (position==1){
                     final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                     Call<Movie> call = apiService.getUpComing(API_Key);
                     call.enqueue(new Callback<Movie>() {
@@ -108,24 +109,19 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
                             Log.e("xxx", t.toString());
                         }
                     });
-                }else if (dataAdapter.getItem(position) == "Top Rated") {
-
+                }else if (position==2) {
                     final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                     Call<Movie> call = apiService.getTopRated(API_Key);
                     call.enqueue(new Callback<Movie>() {
                         @Override
                         public void onResponse(Call<Movie> call, Response<Movie> response) {
-
                             int statusCode = response.code();
                             List<Movie.ResultsBean> movies = response.body().getResults();
                             Log.e("1q1q", String.valueOf(statusCode));
-
                             rv.setLayoutManager(new LinearLayoutManager( getActivity()));
                             MoviesAdapter madapter = new MoviesAdapter(movies,  getActivity());
                             rv.setAdapter(madapter);
-
                         }
-
                         @Override
                         public void onFailure(Call<Movie> call, Throwable t) {
                             Log.e("xxx", t.toString());

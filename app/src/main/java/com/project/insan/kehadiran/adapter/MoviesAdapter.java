@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.project.insan.kehadiran.DetailActivity;
+import com.project.insan.kehadiran.activity.DetailActivity;
 import com.project.insan.kehadiran.java.Movie;
 import com.project.insan.kehadiran.R;
 import com.squareup.picasso.Picasso;
