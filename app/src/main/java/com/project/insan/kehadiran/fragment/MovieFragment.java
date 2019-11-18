@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.project.insan.kehadiran.R;
@@ -35,7 +36,7 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
     private static String API_Key = "b22f426e41174091c4c6bfa16086e1db";
     private ActionBar toolbar;
     private SwipeRefreshLayout swipeLayout;
-
+    private ProgressBar pBar;
     public MovieFragment() {
         // Required empty public constructor
     }
@@ -48,12 +49,25 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_movie, container, false);
+        final View view = inflater.inflate(R.layout.fragment_movie, container, false);
         Log.e("1q1q", "asdf");
+
+
         swipeLayout = view.findViewById(R.id.swipe_container);
         final RecyclerView rv = view.findViewById(R.id.rv_movie);
         final Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+        pBar = view.findViewById(R.id.pBar);
         List<String> categories = new ArrayList<String>();
+        pBar.setVisibility(view.VISIBLE);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                pBar.setVisibility(view.GONE);
+                swipeLayout.setRefreshing(false);
+            }
+        }, 1000);
+
 
         categories.add(getResources().getString(R.string.now_playing));
         categories.add(getResources().getString(R.string.up_coming));
@@ -66,6 +80,7 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, final View view, int position, long id) {
+
                 if (position==0) {
                     final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
                     Call<Movie> call = apiService.getNowPlaying(API_Key);

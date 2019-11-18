@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 
 import com.project.insan.kehadiran.adapter.TvAdapter;
@@ -41,6 +42,7 @@ public class TvFragment extends Fragment {
     private static String API_Key = "b22f426e41174091c4c6bfa16086e1db";
     private ActionBar toolbar;
     private SwipeRefreshLayout swipeLayout;
+    private ProgressBar pBar;
 
     public TvFragment() {
         // Required empty public constructor
@@ -49,13 +51,22 @@ public class TvFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_tv, container, false);
-
+        final View view = inflater.inflate(R.layout.fragment_tv, container, false);
         Log.e("1q1q", "asdf");
         swipeLayout = view.findViewById(R.id.swipe_container);
+        pBar = view.findViewById(R.id.pBar);
         final RecyclerView rv = view.findViewById(R.id.rv_movie);
         final Spinner spinner =  view.findViewById(R.id.spinner);
         List<String> categories = new ArrayList<String>();
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                pBar.setVisibility(view.GONE);
+                swipeLayout.setRefreshing(false);
+            }
+        }, 1000);
+
         categories.add(getResources().getString(R.string.airing_today));
         categories.add(getResources().getString(R.string.popular));
 

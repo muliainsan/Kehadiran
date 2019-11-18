@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity{
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
         adapter = new TabAdapter(getSupportFragmentManager());
         adapter.addFragment(new MovieFragment(), getResources().getString(R.string.tab_movie));
-        adapter.addFragment(new TvFragment(), getResources().getString(R.string.tab_movie));
+        adapter.addFragment(new TvFragment(), getResources().getString(R.string.tab_tv));
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
