@@ -6,7 +6,7 @@ import android.os.Parcelable;
 import java.io.Serializable;
 import java.util.List;
 
-public class Movie implements Serializable {
+public class Movie implements Parcelable {
 
 
     /**
@@ -22,6 +22,25 @@ public class Movie implements Serializable {
     private DatesBean dates;
     private int total_pages;
     private List<ResultsBean> results;
+
+    protected Movie(Parcel in) {
+        page = in.readInt();
+        total_results = in.readInt();
+        total_pages = in.readInt();
+        results = in.createTypedArrayList(ResultsBean.CREATOR);
+    }
+
+    public static final Creator<Movie> CREATOR = new Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 
     public int getPage() {
         return page;
@@ -61,6 +80,19 @@ public class Movie implements Serializable {
 
     public void setResults(List<ResultsBean> results) {
         this.results = results;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(page);
+        dest.writeInt(total_results);
+        dest.writeInt(total_pages);
+        dest.writeTypedList(results);
     }
 
     public static class DatesBean {
