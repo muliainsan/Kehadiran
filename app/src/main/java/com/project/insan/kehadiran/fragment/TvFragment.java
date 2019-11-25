@@ -43,9 +43,15 @@ public class TvFragment extends Fragment {
     private ActionBar toolbar;
     private SwipeRefreshLayout swipeLayout;
     private ProgressBar pBar;
-
+    private static final String STATE_RESULT = "state_result";
     public TvFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("dataGotFromServer", STATE_RESULT);
     }
 
     @Override
