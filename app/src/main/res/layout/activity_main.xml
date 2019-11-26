@@ -23,27 +23,35 @@
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="@string/app_name" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="?actionBarSize"
-            app:tabGravity="fill"
-            app:tabIndicatorColor="#FFF"
-            app:tabIndicatorHeight="4dp"
-            app:tabBackground="@color/colorPrimary"
-            app:tabMode="fixed"/>
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tabLayout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:minHeight="?actionBarSize"-->
+<!--            app:tabGravity="fill"-->
+<!--            app:tabIndicatorColor="#FFF"-->
+<!--            app:tabIndicatorHeight="4dp"-->
+<!--            app:tabBackground="@color/colorPrimary"-->
+<!--            app:tabMode="fixed"/>-->
     </com.google.android.material.appbar.AppBarLayout>
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/bottom_nav"/>
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewPager"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:layout_above="@+id/bottom_nav"/>-->
+<FrameLayout
+    android:id="@+id/fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/bottom_nav"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="MainActivity"
+    tools:showIn="@layout/activity_main"/>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav"
         android:layout_width="match_parent"
