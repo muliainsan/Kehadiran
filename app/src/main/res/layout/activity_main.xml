@@ -8,7 +8,8 @@
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,12 +34,27 @@
             app:tabBackground="@color/colorPrimary"
             app:tabMode="fixed"/>
     </com.google.android.material.appbar.AppBarLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
-<!--    <include layout="@layout/content_main" />-->
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_nav"/>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/bottom_nav_menu"
+
+
+        android:pointerIcon="zoom_in"/>
+
+</RelativeLayout>
 </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

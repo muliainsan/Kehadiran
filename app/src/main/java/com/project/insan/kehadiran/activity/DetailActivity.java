@@ -1,10 +1,13 @@
 package com.project.insan.kehadiran.activity;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -15,16 +18,16 @@ import com.squareup.picasso.Picasso;
 public class DetailActivity extends AppCompatActivity {
     public TextView Title, Rate, Release, Detail;
     ImageView image;
-
+    private Toolbar toolbar;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
+        toolbar = findViewById(R.id.toolbar2);
+        toolbar.inflateMenu(R.menu.favorit);
+//        setSupportActionBar(toolbar);
         Intent intent = getIntent();
         Movie.ResultsBean movie= intent.getParcelableExtra("value");
 
@@ -47,6 +50,19 @@ public class DetailActivity extends AppCompatActivity {
 ////                    .error(R.drawable.ic_error) //Image resource for error
 ////                    .resize(300, 500)  // Post processing - Resizing the image
                 .into(image); // View where image is loaded.
+
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                if(menuItem.getItemId()==R.id.action_favorite)
+                {
+                    menuItem.setIcon(getResources().getDrawable(R.drawable.ic_favorite_red_24dp));
+//                    ClipData.Item item = findViewById(R.id.action_favorite);
+                }
+                return false;
+            }
+        });
 
 
     }
