@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.project.insan.kehadiran.R;
 import com.project.insan.kehadiran.adapter.TabAdapter;
+import com.project.insan.kehadiran.fragment.FavoriteFragment;
 import com.project.insan.kehadiran.fragment.MovieFragment;
 import com.project.insan.kehadiran.fragment.TvFragment;
 
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity{
     private ViewPager viewPager;
     private MovieFragment movie_fragment = new MovieFragment();
     private TvFragment tv_fragment =new TvFragment();
+    private FavoriteFragment favorite_fragement =new FavoriteFragment();
     private BottomNavigationView bottomNavigationView;
     private FragmentManager manager;
     Fragment active= movie_fragment;
@@ -83,7 +85,7 @@ public class MainActivity extends AppCompatActivity{
                         active = tv_fragment;
                         break;
                     case R.id.favorite:
-                        Toast.makeText(MainActivity.this, "Favorite", Toast.LENGTH_SHORT).show();
+                        active = favorite_fragement;
                         break;
                 }
                 return loadFragment(active);
