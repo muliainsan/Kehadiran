@@ -153,8 +153,11 @@ public class Movie implements Parcelable {
         private String overview;
         private String release_date;
         private List<Integer> genre_ids;
+        private byte[] img;
+        public ResultsBean() {
+        }
 
-        protected ResultsBean(Parcel in) {
+        public ResultsBean(Parcel in) {
             vote_count = in.readInt();
             id = in.readInt();
             video = in.readByte() != 0;
@@ -168,6 +171,14 @@ public class Movie implements Parcelable {
             adult = in.readByte() != 0;
             overview = in.readString();
             release_date = in.readString();
+        }
+
+        public byte[] getImg() {
+            return img;
+        }
+
+        public void setImg(byte[] img) {
+            this.img = img;
         }
 
         public static final Creator<ResultsBean> CREATOR = new Creator<ResultsBean>() {

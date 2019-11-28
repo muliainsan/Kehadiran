@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MovieViewH
 //        holder.image.setText(list.get(i).getTitle());
         Picasso picasso = Picasso.with(context);
         picasso.setIndicatorsEnabled(true);
+        Log.i("qwerty",list.get(i).getPoster_path()+"qwerty");
         picasso.load("http://image.tmdb.org/t/p/w500/"+list.get(i).getPoster_path()) //Load the image
 ////                    .placeholder(R.drawable.ic_placeholder) //Image resource that act as placeholder
 ////                    .error(R.drawable.ic_error) //Image resource for error
