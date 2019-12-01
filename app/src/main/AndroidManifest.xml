@@ -13,9 +13,16 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".activity.SearchResultActivity"
+            android:label="@string/title_activity_search_result"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".activity.Language"
             android:label="@string/title_activity_language"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activity.DetailActivity"
             android:label="@string/title_activity_detail"

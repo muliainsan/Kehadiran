@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran.fragment;
+package com.project.insan.kehadiran.fragment.movie;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -97,15 +97,6 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
         dataAdapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         spinner.setAdapter(dataAdapter);
 
-//        if (savedInstanceState != null) {
-//            Log.i("ffffggg", "asd");
-//            movies =  savedInstanceState.getParcelableArrayList("list");
-//            LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//            rv.setLayoutManager(layoutManager);
-//            MoviesAdapter madapter = new MoviesAdapter(movies, getActivity());
-//            rv.setAdapter(madapter);
-//        }
-
             spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, final View view, int position, long id) {
@@ -125,7 +116,6 @@ public class MovieFragment extends Fragment implements View.OnClickListener {
                     @Override
                     public void run() {
                         getData(spinner.getSelectedItemPosition(),savedInstanceState);
-//                    setupViewPager(viewPager);
                         swipeLayout.setRefreshing(false);
                     }
                 }, 1000);
@@ -146,7 +136,6 @@ void getData(int position, final Bundle savedInstanceState ){
             public void onResponse(Call<Movie> call, Response<Movie> response) {
                 int statusCode = response.code();
                 movies = response.body().getResults();
-                Log.e("1q1q", String.valueOf(statusCode));
                 LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                 rv.setLayoutManager(layoutManager);
                 MoviesAdapter madapter = new MoviesAdapter(movies, getActivity());
@@ -156,11 +145,9 @@ void getData(int position, final Bundle savedInstanceState ){
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Log.e("xxx", t.toString());
                 Toast.makeText(getActivity(), "No Internet Access", Toast.LENGTH_SHORT).show();
                 if (savedInstanceState != null) {
                     movies =  savedInstanceState.getParcelableArrayList("list");
-                    Log.i("ffffggg", String.valueOf(movies.size()));
 //                    if(movies.size()!=0) {
                         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
                         rv.setLayoutManager(layoutManager);
@@ -179,7 +166,6 @@ void getData(int position, final Bundle savedInstanceState ){
 
                 int statusCode = response.code();
                 movies2 = response.body().getResults();
-                Log.e("1q1q", String.valueOf(statusCode));
 
                 rv.setLayoutManager(new LinearLayoutManager(getActivity()));
                 MoviesAdapter madapter = new MoviesAdapter(movies2, getActivity());
@@ -189,7 +175,6 @@ void getData(int position, final Bundle savedInstanceState ){
 
             @Override
             public void onFailure(Call<Movie> call, Throwable t) {
-                Log.e("xxx", t.toString());
                 Toast.makeText(getActivity(), "No Internet Access", Toast.LENGTH_SHORT).show();
                 if (savedInstanceState != null) {
 

@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.MovieFragment"
+    tools:context=".fragment.movie.MovieFragment"
     android:orientation="vertical">
     <ProgressBar
         android:id="@+id/pBar"
@@ -49,13 +49,6 @@
                         android:paddingBottom="15dp"
                         />
 
-                    <!--<TextView-->
-                    <!--android:layout_width="match_parent"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:paddingTop="10dp"-->
-                    <!--android:text="New Release Films"-->
-                    <!--android:textColor="#111"-->
-                    <!--android:textSize="16dp" />-->
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rv_movie"

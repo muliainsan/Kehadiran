@@ -32,4 +32,16 @@ public interface ApiInterface {
     Call<Tv> getTVairingToday(
             @Query("api_key") String apiKey
     );
+
+    @GET("search/movie/")
+    Call<Movie> getSearchMovie(
+            @Query("api_key") String apiKey,
+            @Query("query") String query
+    );
+
+    @GET("search/tv/")
+    Call<Movie> getSearchTv(
+            @Query("api_key") String apiKey,
+            @Query("query") String query
+    );
 }
