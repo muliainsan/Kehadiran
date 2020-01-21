@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.movie.MovieFragment"
+    tools:context=".ui.fragment.movie.MovieFragment"
     android:orientation="vertical">
     <ProgressBar
         android:id="@+id/pBar"

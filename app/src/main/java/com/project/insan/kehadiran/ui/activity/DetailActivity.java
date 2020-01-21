@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran.activity;
+package com.project.insan.kehadiran.ui.activity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

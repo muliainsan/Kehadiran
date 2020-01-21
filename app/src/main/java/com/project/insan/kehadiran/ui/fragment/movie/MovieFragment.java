@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran.fragment.movie;
+package com.project.insan.kehadiran.ui.fragment.movie;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -25,7 +25,6 @@ import com.project.insan.kehadiran.java.Movie;
 import com.project.insan.kehadiran.services.ApiClient;
 import com.project.insan.kehadiran.services.ApiInterface;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 

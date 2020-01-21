@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <receiver android:name=".services.FavoritWidget">
+        <receiver android:name=".ui.FavoritWidget">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>
@@ -23,26 +23,26 @@
         </receiver>
 
         <activity
-            android:name=".SettingsActivity"
+            android:name=".ui.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity
-            android:name=".activity.SearchResultActivity"
+            android:name=".ui.activity.SearchResultActivity"
             android:label="@string/title_activity_search_result"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.Language"
+            android:name=".ui.activity.Language"
             android:label="@string/title_activity_language"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.DetailActivity"
+            android:name=".ui.activity.DetailActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.DetailtvActivity"
+            android:name=".ui.activity.DetailtvActivity"
             android:label="@string/title_activity_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".ui.activity.MainActivity"
             android:label="@string/title_activity_Main"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran.fragment.Tv;
+package com.project.insan.kehadiran.ui.fragment.Tv;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -19,7 +19,6 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.project.insan.kehadiran.adapter.MoviesAdapter;
 import com.project.insan.kehadiran.adapter.TvAdapter;
 import com.project.insan.kehadiran.R;
 import com.project.insan.kehadiran.java.Tv;

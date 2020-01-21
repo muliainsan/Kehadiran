@@ -1,4 +1,4 @@
-package com.project.insan.kehadiran.activity;
+package com.project.insan.kehadiran.ui.activity;
 
 import androidx.annotation.NonNull;
 
@@ -23,11 +23,11 @@ import android.widget.Toast;
 
 
 import com.project.insan.kehadiran.R;
-import com.project.insan.kehadiran.SettingsActivity;
+import com.project.insan.kehadiran.ui.SettingsActivity;
 import com.project.insan.kehadiran.adapter.TabAdapter;
-import com.project.insan.kehadiran.fragment.FavoriteFragment;
-import com.project.insan.kehadiran.fragment.movie.MovieFragment;
-import com.project.insan.kehadiran.fragment.Tv.TvFragment;
+import com.project.insan.kehadiran.ui.fragment.FavoriteFragment;
+import com.project.insan.kehadiran.ui.fragment.movie.MovieFragment;
+import com.project.insan.kehadiran.ui.fragment.Tv.TvFragment;
 
 public class MainActivity extends AppCompatActivity{
     private static String API_Key = "b22f426e41174091c4c6bfa16086e1db";
