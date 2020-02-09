@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Title : </string>
+    <string name="rating">Rating : </string>
+    <string name="release_date">Release Date : </string>
+    <string name="detail">Detail : </string>
+    <string name="asdf">Profile</string>
+
+    <string name="app_name">Movies</string>
+    <string name="tab_movie">Movies</string>
+    <string name="tab_tv">Tv Shows</string>
+    <string name="title_activity_detail">Activity detail</string>
+    <string name="title_activity_Main">Movie DB</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="up_coming">Up Coming</string>
+    <string name="top_rated">Top Rated</string>
+    <string name="airing_today">Airing Today</string>
+    <string name="popular">Popular</string>
+    <string name="title_activity_language">Language</string>
+    <string name="ganti_bahasa">Change Language</string>
+
+    <string name="action_favorite">Favorite</string>
+</resources>

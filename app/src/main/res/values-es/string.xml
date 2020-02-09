@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Título : </string>
+    <string name="rating">Clasificación : </string>
+    <string name="release_date">Fecha de lanzamiento : </string>
+    <string name="detail">Fecha de lanzamiento : </string>
+    <string name="asdf">Perfil</string>
+
+    <string name="app_name">Películas</string>
+    <string name="tab_movie">Películas</string>
+    <string name="tab_tv">Programas de televisión</string>
+    <string name="title_activity_detail">Detalle de actividad</string>
+    <string name="title_activity_Main">Movie DB</string>
+    <string name="now_playing">Jugando ahora</string>
+    <string name="up_coming">Llegando</string>
+    <string name="top_rated">Los más valorados</string>
+    <string name="airing_today">Transmitiéndose hoy</string>
+    <string name="popular">Popular</string>
+    <string name="title_activity_language">Idioma</string>
+    <string name="ganti_bahasa">Cambiar idioma</string>
+
+    <string name="action_favorite">Favorite</string>
+
+</resources>

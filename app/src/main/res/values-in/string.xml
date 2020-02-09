@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title">Judul : </string>
+    <string name="rating">Peringkat : </string>
+    <string name="release_date">Tanggal Rilis : </string>
+    <string name="detail">Detail : </string>
+    <string name="asdf">Profil</string>
+
+    <string name="app_name">Film</string>
+    <string name="tab_movie">Film</string>
+    <string name="tab_tv">Acara Tv</string>
+    <string name="title_activity_detail">Activity detail</string>
+    <string name="title_activity_Main">DB Film</string>
+    <string name="now_playing">Sekarang Tayang</string>
+    <string name="up_coming">Akan Datang</string>
+    <string name="top_rated">Peringkat Teratas</string>
+    <string name="airing_today">Tayang Hari ini</string>
+    <string name="popular">Populer</string>
+    <string name="title_activity_language">Bahasa</string>
+    <string name="ganti_bahasa">Ganti Bahasa</string>
+
+    <string name="action_favorite">Favorite</string>
+</resources>
